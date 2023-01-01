@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        class Stopwatch {
+ 
+            constructor() {
+                this.duration = 0;
+                this.status = 'stopped';
+            }
+            
+            start() {
+                if (this.status == 'started') {
+                    throw new Error('dadach already started!')
+                }
+                this.currentTime = Date.now();
+                this.status = 'started';
+            }
+
+            stop() {
+                if (this.status == 'stopped') {
+                    throw new Error('dadach ergaergqa')
+                }
+                this.duration = Date.now() - this.currentTime + this.duration;
+                this.status = 'stopped';
+                console.log((this.duration / 1000).toFixed(1))
+            }
+
+            reset() {
+                if (this.status == 'started') {
+                    this.stop();
+                } 
+                this.duration = 0;
+            }
+            
+        }
+    </script>
+</body>
+</html>
